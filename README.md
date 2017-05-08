@@ -21,7 +21,7 @@ La prima parte mette a disposzizione dell'utente un menu a cascata formato dalle
 Cliccando su ognuna di queste voci nella parte di visualizzazione delle attività appaiono tutte le informazioni opportunamente filtrate. Ad esempio cliccando su "Today" solo le issue relative ad oggi vengono visualizzate, cliccando su "Next 7 Days" vengono visualizzate tutte le attivita per i prossimi 7 giorni. Inoltre è anche possibile filtrare tra le attività completate oppure no, attraverso le sottovoci del menu Status (Done e Pending). La sezione relativa ai progetti non è stata implementata per questa demo. Quando l'utente accede all'applicazione e non trova nessuna attività in corso il sistema lo avvisa con un messaggio che è necessario aggiungere un elemento per visualizzare dei contenuti "There are not Activites in your TODO List , please add one".
 
 ###### Sezione informativa
-E' popolata attraverso in file [welcome.md](/activity-vaadin-crud/src/main/resources/welcome.md) e permette di fornire all'utente una scheda di help per capire le funzionalità dell'applicativo
+E' popolata attraverso in file [welcome.md](/src/main/resources/welcome.md) e permette di fornire all'utente una scheda di help per capire le funzionalità dell'applicativo
 
 ###### Filtri e Azioni
 La terza sezione mette a disposizione alcunui Filtri ed alcue azioni che l'utente può applicare.
@@ -73,7 +73,7 @@ mvn spring-boot:run
 
 ### Creae il pacchetto ed eseguirlo
 
-The built .jar file is auto-runnable, so as you can move it to any computer having java installed and run the app.
+Il file ottenuto dal build .jar è auto-runnable, quindi può essere installato in qualsiasi computer con una versione di java propriamente installata e funzionante.
 
 ```
 git clone https://github.com/attybro/activity-vaadin-crud.git
