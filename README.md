@@ -15,15 +15,13 @@ La prima parte mette a disposzizione dell'utente un menu a cascata formato dalle
 - Today
 - Next 7 Days
 - Projects
-- Status
--- Done
--- Pending
+- Status (Done, Pending)
 
 ###### Menu principale
 Cliccando su ognuna di queste voci nella parte di visualizzazione delle attività appaiono tutte le informazioni opportunamente filtrate. Ad esempio cliccando su "Today" solo le issue relative ad oggi vengono visualizzate, cliccando su "Next 7 Days" vengono visualizzate tutte le attivita per i prossimi 7 giorni. Inoltre è anche possibile filtrare tra le attività completate oppure no, attraverso le sottovoci del menu Status (Done e Pending). La sezione relativa ai progetti non è stata implementata per questa demo. Quando l'utente accede all'applicazione e non trova nessuna attività in corso il sistema lo avvisa con un messaggio che è necessario aggiungere un elemento per visualizzare dei contenuti "There are not Activites in your TODO List , please add one".
 
 ###### Sezione informativa
-E' popolata attraverso un file .md e permette di fornire all'utente una scheda di help per capire le funzionalità dell'applicativo
+E' popolata attraverso in file [welcome.md](/activity-vaadin-crud/src/main/resources/welcome.md) e permette di fornire all'utente una scheda di help per capire le funzionalità dell'applicativo
 
 ###### Filtri e Azioni
 La terza sezione mette a disposizione alcunui Filtri ed alcue azioni che l'utente può applicare.
@@ -40,22 +38,22 @@ Attraverso il pulsante rappresentato dall'icona "+" l'utente può inserire una n
 - Scadenza
 - Stato
 
-Unico campo richiesto obbligatoriamente è il campo della descrizione. Una volta popolato il contenuto può essere salvato attraverso il pulsante Save (Che divenata attivo solo se il campo obbligatorio e popolato) oppure scartato attraverso il pulsante Cancel.
-Attarverso il pulsante rappresentato da una matita l'utente può modificare una delle attività visualizzate (per essere attivabile però una ed una sola delle attività deve essere selizionata nella checjbox). La schermata di modifica è simile a quella di immissione appena descritta. In questa sezione l'utenet può selezionare anche lo stato dell'attività cambiando il valore dello switch in fondo all'interfaccia.
-L'ultimo pulsante presente in questa sezione è il pulsante per la cancellazione, premendo il quale l'utente può eliminare le entità selezionate. Inoltre prima di rimuovere definitivamente le selezioni all'utenete viene visualizzato un ulteriore warning "Are you sure you want to delete the entry?". Premendo su "OK" la rimozione è definitiva.
+Unico campo obbligatorio è il campo della descrizione ed una volta popolato permette al contenuto di essere salvato attraverso il pulsante Save (attivo solo se il campo Descrizione è popolato) oppure scartato attraverso Cancel.
+Attarverso il pulsante rappresentato da una matita l'utente può modificare una delle attività visualizzate (per essere attivato però una ed una sola delle attività deve essere selezionata nella checkbox). La schermata di modifica è simile a quella di inserimento appena descritta. Attraverso questa maschera l'utente può selezionare anche lo stato dell'attività cambiando il valore dello switch in fondo all'interfaccia.
+L'ultimo pulsante presente in questa sezione è il pulsante per la cancellazione, premendo questo l'utente può eliminare tutte le entità selezionate con una sola azione. Prima di rimuovere definitivamente la selezione viene visualizzato un ulteriore warning "Are you sure you want to delete the entry?". Premendo su "OK" la rimozione è definitiva.
 
 ## Descrizione tecnica dell'applicazione
 
-L'applicazione è stata realizzata partendo da [Spring Boot](http://projects.spring.io/spring-boot/) per velocizzare i tempi di configurazione e start-up del progetto. Per realizzare l'applicazione si è scelto di utilizzare come tecnologie di base [Spring Data JPA](http://projects.spring.io/spring-data-jpa/) and [Vaadin](https://vaadin.com). Anche se Vaadin non fornisce un modello MVC ben definito utilizzando JPA ed [Hibernate](http://http://hibernate.org/) si è arrivati ad ottenere una versione derivata. Come Database per questo sistema si è deciso di utilizzare come database [H2](http://www.h2database.com/html/main.html). Come ambiente di sviluppo si è utilizzato [Eclipse Neon](http://www.eclipse.org/neon/)
+L'applicazione è stata realizzata partendo da [Spring Boot](http://projects.spring.io/spring-boot/) per velocizzare i tempi di configurazione e start-up del progetto. Per realizzare l'applicazione si è scelto di utilizzare come tecnologie di base [Spring Data JPA](http://projects.spring.io/spring-data-jpa/) and [Vaadin](https://vaadin.com). Anche se Vaadin non fornisce un modello MVC ben definito utilizzando JPA ed [Hibernate](http://http://hibernate.org/) si è arrivati ad ottenere una versione derivata. Come Database per questo sistema si è deciso di utilizzare [H2](http://www.h2database.com/html/main.html). Come IDE si è utilizzato [Eclipse Neon](http://www.eclipse.org/neon/)
 
 ####
-Data la semplicità dell'applicazione si è deciso di utilizzare una singola tabella nel database **attivita** composta dai seguenti campi
+Data la semplicità dell'applicazione si è deciso di utilizzare una singola tabella nel database **attivita** composta dai seguenti campi:
 
 | id_attivita | descrizione |priorita|progetto|scadenza|stato  |
 |-------------|-------------|--------|--------|--------|-------|
 |integer      |string	    |string	 |string  | date   |boolean|
 
-Se si usasse eclipse come IDE utilizzando le configurazioni presenti in questo repository è possibile accedere al DB direttamente da questo link ``http://127.0.0.1:8080/h2-console/`` 
+Usando eclipse come IDE ed utilizzando le configurazioni presenti in questo repository è possibile accedere al DB direttamente da questo link ``http://127.0.0.1:8080/h2-console/`` mentre l'applicazione è disponibile all'ndirizzo ``http://127.0.0.1:8080/``
 
 ## Installazione e utilizo della demo
 
